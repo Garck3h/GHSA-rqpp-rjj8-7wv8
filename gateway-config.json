@@ -1,0 +1,19 @@
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "port": 18789,
+    "auth": {
+      "mode": "password",
+      "sharedSecret": "test_vuln_token_2024"
+    },
+    "controlUi": {
+      "dangerouslyAllowHostHeaderOriginFallback": true
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": "echo"
+    }
+  }
+}

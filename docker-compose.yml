@@ -1,0 +1,17 @@
+services:
+  # 漏洞版本 OpenClaw 网关 (v2026.3.11)
+  openclaw-vulnerable:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openclaw-vuln-gateway
+    ports:
+      - "18789:18789"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
